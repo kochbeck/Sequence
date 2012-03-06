@@ -267,12 +267,14 @@ Aside from these comments, you may modify and distribute this file as you please
 			if(self.settings.nextButton != undefined){
 				self.settings.nextButton.click(function(){
 					self.next();
+			                $.event.trigger("change",{},this);
 				});
 			}
 			
 			if(self.settings.prevButton != undefined){
 				self.settings.prevButton.click(function(){
 					self.prev();
+			                $.event.trigger("change",{},this);
 				});
 			}
 			
@@ -280,9 +282,11 @@ Aside from these comments, you may modify and distribute this file as you please
 				$(document).keydown(function(e){
 					if(e.keyCode == 39){
 						self.next();
+				                $.event.trigger("change",{},this);
 					}
 					if(e.keyCode == 37){
 						self.prev();
+				                $.event.trigger("change",{},this);
 					}
 				});
 			}
@@ -327,8 +331,12 @@ Aside from these comments, you may modify and distribute this file as you please
 							if(touches["touchstart"] > -1 && touches["touchmove"] > self.settings.calculatedSwipeThreshold){
 								if(touches["touchstart"] < touches["touchmove"]){
 									self.next();
+							                $.event.trigger("change",{},this);
+
 								}else{
 									self.prev();
+							                $.event.trigger("change",{},this);
+
 								}
 							}
 						default:
@@ -362,8 +370,10 @@ Aside from these comments, you may modify and distribute this file as you please
 			var self = this;
 			if(self.settings.autoPlayDirection == 1){
 				self.next();
+		                $.event.trigger("change",{},this);
 			}else{
 				self.prev();
+		                $.event.trigger("change",{},this);
 			}
 		},
 		
